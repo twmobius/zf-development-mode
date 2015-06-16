@@ -47,6 +47,31 @@ class Module
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function getViewHelperConfig() 
+    {
+        return array(
+            'factories' => array(
+                'developmentMode' =>
+                    'ZF\DevelopmentMode\DevelopmentModeViewHelperFactory',
+            )
+        );
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    public function getControllerPluginConfig() {
+        return array(
+            'factories' => array(
+                'developmentMode' =>
+                    'ZF\DevelopmentMode\DevelopmentModeControllerPluginFactory'
+            )
+        );
+    }
+    
+    /**
      * Return the console usage for this module
      *
      * @param Console $console
